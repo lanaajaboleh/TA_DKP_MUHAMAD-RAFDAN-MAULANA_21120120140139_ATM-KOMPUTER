@@ -10,8 +10,8 @@ public class Login extends ATM {
     }
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
-        if (vusername.getText().equals(username)) {
-            if (vpassword.getText().equals(pass)) {
+        if (vusername.getText().equals(getUsername())) {
+            if (vpassword.getText().equals(getPass())) {
                 new BankATM().show();
                 this.dispose(); }
             else {
