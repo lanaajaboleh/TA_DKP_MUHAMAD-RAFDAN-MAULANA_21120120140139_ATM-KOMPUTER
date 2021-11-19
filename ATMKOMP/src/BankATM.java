@@ -27,28 +27,28 @@ public class BankATM extends ATM {
 
     private void btnTransferActionPerformed(java.awt.event.ActionEvent evt) {
         String nama3=JOptionPane.showInputDialog("Masukan Nama ");
-        masukan = Integer.parseInt(JOptionPane.showInputDialog("Masukan jumlah yang ingin anda transfer : "));
-        if (saldo <= masukan) {
+        setMasukan(Integer.parseInt(JOptionPane.showInputDialog("Masukan jumlah yang ingin anda transfer : ")));
+        if (getSaldo() <= getMasukan()) {
             JOptionPane.showMessageDialog(rootPane,"Saldo Anda tidak mencukupi");
             JOptionPane.showConfirmDialog(null, " Apakah ingin lanjut?");
             JOptionPane.showMessageDialog(rootPane,"Tambahkan Saldo Rekening Anda");
             System.exit(0);
-        } else if (saldo >= masukan) {
-            hasil = saldo - masukan;
-            saldo = hasil;
-            jawab = String.format(" %,.2f ", hasil);
+        } else if (getSaldo() >= getMasukan()) {
+            setHasil(getSaldo()-getMasukan());
+            setSaldo(getHasil());
+            jawab = String.format(" %,.2f ", getHasil());
             jtxtTampilan2.setText(jawab);
-            JOptionPane.showMessageDialog(rootPane, "Saldo Anda Saat Ini : Rp" + saldo + "\n" + "Transher berhasil ke " + nama3 + " sebesar : Rp" + masukan);
+            JOptionPane.showMessageDialog(rootPane, "Saldo Anda Saat Ini : Rp" + getSaldo() + "\n" + "Transher berhasil ke " + nama3 + " sebesar : Rp" + getMasukan());
         }
     }
 
     private void btnAmbilActionPerformed(java.awt.event.ActionEvent evt) {
-        masukan = Integer.parseInt(JOptionPane.showInputDialog("Masukan jumlah yang ingin anda ambil : "));
-        hasil = saldo - masukan;
-        saldo = hasil;
-        jawab = String.format(" %,.2f ", hasil);
+        setMasukan(Integer.parseInt(JOptionPane.showInputDialog("Masukan jumlah yang ingin anda ambil : ")));
+        setHasil(getSaldo()-getMasukan());
+        setSaldo(getHasil());
+        jawab = String.format(" %,.2f ", getHasil());
         jtxtTampilan2.setText(jawab);
-        JOptionPane.showMessageDialog(rootPane,"Saldo Anda Saat Ini : Rp"+ saldo+ "\n");
+        JOptionPane.showMessageDialog(rootPane,"Saldo Anda Saat Ini : Rp"+ getSaldo()+ "\n");
     }
 
     private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {

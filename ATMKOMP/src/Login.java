@@ -2,6 +2,7 @@ package bank;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class Login extends ATM {
 
@@ -12,7 +13,7 @@ public class Login extends ATM {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
         if (vusername.getText().equals(getUsername())) {
             if (vpassword.getText().equals(getPass())) {
-                new BankATM().show();
+                new BankATM().setVisible(true);
                 this.dispose(); }
             else {
                 JOptionPane.showMessageDialog(rootPane, "<error> Password Salah, Coba Lagi");
