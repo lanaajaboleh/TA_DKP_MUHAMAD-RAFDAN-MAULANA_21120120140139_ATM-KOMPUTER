@@ -1,26 +1,55 @@
 package bank;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.awt.*;
+import java.util.Arrays;
 
-public class Login extends javax.swing.JFrame {
+public class Login extends ATM {
 
     public Login() {
         initComponents();
     }
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
+        if (vusername.getText().equals(getUsername())) {
+            if (vpassword.getText().equals(getPass())) {
+                new BankATM().setVisible(true);
+                this.dispose(); }
+            else {
+                JOptionPane.showMessageDialog(rootPane, "<error> Password Salah, Coba Lagi");
+                vpassword.setText("");
+                vpassword.requestFocus(); }}
+        else {
+            JOptionPane.showMessageDialog(rootPane, "<error> Username Salah, Coba Lagi");
+            vusername.setText("");
+            vpassword.setText("");
+            vusername.requestFocus();
+        }
+    }
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {
+        dispose();
+    }
+
+    private JPasswordField vpassword;
+    private JTextField vusername;
 
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
         vusername = new javax.swing.JTextField();
         vpassword = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btnLogin = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        JLabel jLabel1 = new JLabel();
+        JLabel jLabel2 = new JLabel();
+        JButton btnLogin = new JButton();
+        JButton btnCancel = new JButton();
+        JLabel jLabel3 = new JLabel();
+        JLabel jLabel4 = new JLabel();
+        JLabel jLabel5 = new JLabel();
+        ImageIcon img = new ImageIcon("images/3063254.png");
+        JLabel labelimg = new JLabel(img);
+
+        labelimg.setBounds(20,20,20,20);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,12 +75,12 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Silahkan Login Disini");
 
-        jLabel4.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Noto Sans", Font.PLAIN, 18)); // NOI18N
         jLabel4.setForeground(java.awt.Color.black);
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Selamat datang");
 
-        jLabel5.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Noto Sans", Font.PLAIN, 18)); // NOI18N
         jLabel5.setForeground(java.awt.Color.black);
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("ATM Bank Rafdan");
@@ -112,67 +141,11 @@ public class Login extends javax.swing.JFrame {
                                 .addContainerGap(93, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, vpassword, vusername});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, jLabel1, jLabel2, vpassword, vusername);
 
         pack();
     }
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
-        if (vusername.getText().equals("lanaajaboleh")) {
-            if (vpassword.getText().equals("1234")) {
-                new BankATM().show();
-                this.dispose(); }
-            else {
-                JOptionPane.showMessageDialog(rootPane, "<error> Password Salah, Coba Lagi");
-                vpassword.setText("");
-                vpassword.requestFocus(); }}
-        else {
-            JOptionPane.showMessageDialog(rootPane, "<error> Username Salah, Coba Lagi");
-            vusername.setText("");
-            vpassword.setText("");
-            vusername.requestFocus();
-        }
-    }
-
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {
-        dispose();
-    }
-
-    public static void main(String args[]) {
-      try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
-
-
-    private javax.swing.JPasswordField vpassword;
-    private javax.swing.JTextField vusername;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnLogin;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
 
 
 }
