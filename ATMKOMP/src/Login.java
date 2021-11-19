@@ -30,8 +30,8 @@ public class Login extends ATM {
         dispose();
     }
 
-    private javax.swing.JPasswordField vpassword;
-    private javax.swing.JTextField vusername;
+    private JPasswordField vpassword;
+    private JTextField vusername;
 
     @SuppressWarnings("unchecked")
     private void initComponents() {
@@ -45,6 +45,10 @@ public class Login extends ATM {
         JLabel jLabel3 = new JLabel();
         JLabel jLabel4 = new JLabel();
         JLabel jLabel5 = new JLabel();
+        ImageIcon img = new ImageIcon("images/3063254.png");
+        JLabel labelimg = new JLabel(img);
+
+        labelimg.setBounds(20,20,20,20);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 

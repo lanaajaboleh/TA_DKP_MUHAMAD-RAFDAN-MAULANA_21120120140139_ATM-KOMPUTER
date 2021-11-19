@@ -20,10 +20,8 @@ public class BankATM extends ATM {
     }
 
     private void btnCekSaldoActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(rootPane, "Saldo Anda Saat Ini : Rp"+ saldo);
-        hasil = saldo;
-        saldo = hasil;
-        jawab = String.format(" %,.2f ",saldo);
+        JOptionPane.showMessageDialog(rootPane, "Saldo Anda Saat Ini : Rp"+ getSaldo());
+        jawab = String.format(" %,.2f ",getSaldo());
         jtxtTampilan2.setText(jawab);
     }
 
@@ -61,26 +59,22 @@ public class BankATM extends ATM {
         jtxtTampilan2.setText("");
     }
 
-
-
-
-    private javax.swing.JTextField jtxtTampilan2;
+    private JTextField jtxtTampilan2;
 
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
-        javax.swing.JButton btnAmbil = new javax.swing.JButton();
-        javax.swing.JButton btnKeluar = new javax.swing.JButton();
-        javax.swing.JLabel jLabel4 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel5 = new javax.swing.JLabel();
-        javax.swing.JButton btnCekSaldo = new javax.swing.JButton();
-        jtxtTampilan2 = new javax.swing.JTextField();
-        javax.swing.JButton btnClear = new javax.swing.JButton();
-        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
-        javax.swing.JLabel jLabel3 = new javax.swing.JLabel();
-        javax.swing.JButton btnSimpan = new javax.swing.JButton();
-        javax.swing.JButton btnTransfer = new javax.swing.JButton();
-
+        JButton btnAmbil = new JButton();
+        JButton btnKeluar = new JButton();
+        JLabel jLabel4 = new JLabel();
+        JLabel jLabel5 = new JLabel();
+        JButton btnCekSaldo = new JButton();
+        jtxtTampilan2 = new JTextField();
+        JButton btnClear = new JButton();
+        JLabel jLabel1 = new JLabel();
+        JLabel jLabel3 = new JLabel();
+        JButton btnSimpan = new JButton();
+        JButton btnTransfer = new JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +90,7 @@ public class BankATM extends ATM {
         jLabel5.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel5.setForeground(Color.black);
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ATM Bank Rafdan");
+        jLabel5.setText("ATM Bank KAYU");
 
         btnCekSaldo.setText("Cek Saldo");
         btnCekSaldo.addActionListener(new java.awt.event.ActionListener() {

@@ -5,14 +5,13 @@ class ATM extends javax.swing.JFrame{
     int masukan;
     double hasil, saldo;
     String jawab;
-    private String username="lanaajaboleh", pass="1234";
 
     public String getUsername() {
-        return username;
+        return "lanaajaboleh";
     }
 
     public String getPass() {
-        return pass;
+        return "1234";
     }
 
     public void setHasil(double hasil) {
