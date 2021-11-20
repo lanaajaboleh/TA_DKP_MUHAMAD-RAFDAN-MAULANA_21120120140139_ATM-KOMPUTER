@@ -7,8 +7,8 @@ class ATM extends javax.swing.JFrame{
     String jawab;
     String[] ATM = {"KAYU","BNI", "Mandiri", "BRI", "BTN"};
 
-    public String getUsername() {
-        return "lanaajaboleh";
+    public String getRekening() {
+        return "114506701";
     }
 
     public String getPass() {

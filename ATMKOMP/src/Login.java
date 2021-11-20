@@ -11,19 +11,15 @@ public class Login extends ATM {
     }
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
-        if (vusername.getText().equals(getUsername())) {
-            if (vpassword.getText().equals(getPass())) {
-                new BankATM().setVisible(true);
-                this.dispose(); }
-            else {
-                JOptionPane.showMessageDialog(rootPane, "<error> Password Salah, Coba Lagi");
-                vpassword.setText("");
-                vpassword.requestFocus(); }}
+        if (vrekening.getText().equals(getRekening())&&vpassword.getText().equals(getPass())) {
+            new BankATM().setVisible(true);
+            this.dispose();
+        }
         else {
-            JOptionPane.showMessageDialog(rootPane, "<error> Username Salah, Coba Lagi");
-            vusername.setText("");
+            JOptionPane.showMessageDialog(rootPane, "Rekening atau Password Salah, Coba Lagi");
+            vrekening.setText("");
             vpassword.setText("");
-            vusername.requestFocus();
+            vrekening.requestFocus();
         }
     }
 
@@ -32,11 +28,11 @@ public class Login extends ATM {
     }
 
     private JPasswordField vpassword;
-    private JTextField vusername;
+    private JTextField vrekening;
 
     private void initComponents() {
 
-        vusername = new JTextField();
+        vrekening = new JTextField();
         vpassword = new JPasswordField();
         JLabel jLabel1 = new JLabel();
         JLabel jLabel2 = new JLabel();
@@ -48,7 +44,7 @@ public class Login extends ATM {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Username");
+        jLabel1.setText("Rekening");
 
         jLabel2.setText("Password");
 
@@ -95,7 +91,7 @@ public class Login extends ATM {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                         .addComponent(vpassword, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                                                        .addComponent(vusername))))
+                                                        .addComponent(vrekening))))
                                 .addGap(102, 102, 102))
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +119,7 @@ public class Login extends ATM {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(vusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(vrekening, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -136,7 +132,7 @@ public class Login extends ATM {
                                 .addContainerGap(93, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, jLabel1, jLabel2, vpassword, vusername);
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, jLabel1, jLabel2, vpassword, vrekening);
 
         pack();
     }

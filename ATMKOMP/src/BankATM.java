@@ -6,6 +6,7 @@ import java.awt.*;
 
 public class BankATM extends ATM {
 
+
     public BankATM() {
         initComponents();
     }
@@ -26,7 +27,11 @@ public class BankATM extends ATM {
     }
 
     private void btnTransferActionPerformed(java.awt.event.ActionEvent evt) {
-        String nama3=JOptionPane.showInputDialog("Masukan Nama ");
+        JComboBox<String> listATM = new JComboBox<>(ATM);
+        JOptionPane.showMessageDialog(null, listATM, "Rekening Tujuan",
+                JOptionPane.QUESTION_MESSAGE);
+        String rektujuan = listATM.getItemAt(listATM.getSelectedIndex());
+        String nama3=JOptionPane.showInputDialog("Masukan Rekening ");
         setMasukan(Integer.parseInt(JOptionPane.showInputDialog("Masukan jumlah yang ingin anda transfer : ")));
         if (getSaldo() <= getMasukan()) {
             JOptionPane.showMessageDialog(rootPane,"Saldo Anda tidak mencukupi");
@@ -38,7 +43,7 @@ public class BankATM extends ATM {
             setSaldo(getHasil());
             jawab = String.format(" %,.2f ", getHasil());
             jtxtTampilan2.setText(jawab);
-            JOptionPane.showMessageDialog(rootPane, "Saldo Anda Saat Ini : Rp" + getSaldo() + "\n" + "Transher berhasil ke " + nama3 + " sebesar : Rp" + getMasukan());
+            JOptionPane.showMessageDialog(rootPane, "Saldo Anda Saat Ini : Rp" + getSaldo() + "\n" + "Transher berhasil ke " + nama3 + " rekening " + rektujuan+ " sebesar : Rp" + getMasukan());
         }
     }
 
@@ -75,7 +80,6 @@ public class BankATM extends ATM {
         JLabel jLabel3 = new JLabel();
         JButton btnSimpan = new JButton();
         JButton btnTransfer = new JButton();
-        JComboBox<String> listATM = new JComboBox<>(ATM);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
