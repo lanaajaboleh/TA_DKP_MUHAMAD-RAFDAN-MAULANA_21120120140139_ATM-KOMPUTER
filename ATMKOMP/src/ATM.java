@@ -2,8 +2,8 @@ package bank;
 
 class ATM extends javax.swing.JFrame{
 
-    int masukan;
-    double hasil, saldo;
+    private int masukan;
+    private double hasil, saldo;
     String jawab;
     String[] ATM = {"KAYU","BNI", "Mandiri", "BRI", "BTN"};
 
