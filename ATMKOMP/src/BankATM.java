@@ -80,7 +80,6 @@ public class BankATM extends ATM {
         JLabel jLabel3 = new JLabel();
         JButton btnSimpan = new JButton();
         JButton btnTransfer = new JButton();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel3.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N

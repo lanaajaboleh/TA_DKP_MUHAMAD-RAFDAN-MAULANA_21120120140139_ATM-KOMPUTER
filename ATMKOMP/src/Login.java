@@ -13,6 +13,7 @@ public class Login extends ATM {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
         if (vrekening.getText().equals(getRekening())&&vpassword.getText().equals(getPass())) {
             new BankATM().setVisible(true);
+            new iklan();
             this.dispose();
         }
         else {
