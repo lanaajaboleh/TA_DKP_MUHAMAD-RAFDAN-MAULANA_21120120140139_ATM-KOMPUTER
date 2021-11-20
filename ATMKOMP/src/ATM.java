@@ -5,6 +5,7 @@ class ATM extends javax.swing.JFrame{
     int masukan;
     double hasil, saldo;
     String jawab;
+    String[] ATM = {"KAYU","BNI", "Mandiri", "BRI", "BTN"};
 
     public String getUsername() {
         return "lanaajaboleh";

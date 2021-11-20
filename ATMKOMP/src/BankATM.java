@@ -75,6 +75,7 @@ public class BankATM extends ATM {
         JLabel jLabel3 = new JLabel();
         JButton btnSimpan = new JButton();
         JButton btnTransfer = new JButton();
+        JComboBox<String> listATM = new JComboBox<>(ATM);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -198,5 +199,6 @@ public class BankATM extends ATM {
 
         pack();
     }
+
 
 }

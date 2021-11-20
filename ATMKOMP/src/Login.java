@@ -34,11 +34,10 @@ public class Login extends ATM {
     private JPasswordField vpassword;
     private JTextField vusername;
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
 
-        vusername = new javax.swing.JTextField();
-        vpassword = new javax.swing.JPasswordField();
+        vusername = new JTextField();
+        vpassword = new JPasswordField();
         JLabel jLabel1 = new JLabel();
         JLabel jLabel2 = new JLabel();
         JButton btnLogin = new JButton();
@@ -46,10 +45,6 @@ public class Login extends ATM {
         JLabel jLabel3 = new JLabel();
         JLabel jLabel4 = new JLabel();
         JLabel jLabel5 = new JLabel();
-        ImageIcon img = new ImageIcon("images/3063254.png");
-        JLabel labelimg = new JLabel(img);
-
-        labelimg.setBounds(20,20,20,20);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
