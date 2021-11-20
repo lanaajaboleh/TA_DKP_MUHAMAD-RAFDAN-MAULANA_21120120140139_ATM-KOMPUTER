@@ -12,9 +12,9 @@ public class Login extends ATM {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
         if (vrekening.getText().equals(getRekening())&&vpassword.getText().equals(getPass())) {
+            this.dispose();
             new BankATM().setVisible(true);
             new iklan();
-            this.dispose();
         }
         else {
             JOptionPane.showMessageDialog(rootPane, "Rekening atau Password Salah, Coba Lagi");
@@ -75,9 +75,10 @@ public class Login extends ATM {
         jLabel5.setFont(new java.awt.Font("Noto Sans", Font.PLAIN, 18)); // NOI18N
         jLabel5.setForeground(java.awt.Color.black);
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ATM Bank Rafdan");
+        jLabel5.setText("ATM Bank KAYU");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setBackground(Color.CYAN);
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

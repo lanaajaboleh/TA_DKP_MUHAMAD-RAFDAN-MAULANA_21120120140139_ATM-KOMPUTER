@@ -141,6 +141,7 @@ public class BankATM extends ATM {
         jLabel1.setText("Saldo anda saat ini : Rp");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setBackground(Color.CYAN);
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
